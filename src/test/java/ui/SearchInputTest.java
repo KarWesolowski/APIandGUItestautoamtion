@@ -6,11 +6,11 @@ import pages.GooglePage;
 public class SearchInputTest {
 
     GooglePage googlePage = new GooglePage();
-    String googleUrl = "https://google.pl/";
+    private static String GOOGLE_URL = "https://google.pl/";
 
     @Test
     public void searchInputTest() {
-        googlePage.openWebsite(googleUrl);
+        googlePage.openWebsite(GOOGLE_URL);
         googlePage.clickDecline();
         googlePage.fillSearchField();
     }

@@ -6,15 +6,15 @@ import requers.RequestFactory;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class getUsersTest {
+public class GetUsersTest {
 
-    private String getUsersPath = "/api/users";
+    private static String GET_USER_PATH = "/api/users";
 
 
     @Test
     public void getUsersTest() {
         given()
-                .spec(RequestFactory.createBaseRequestSpecBuilder().setBasePath(getUsersPath).build()).
+                .spec(RequestFactory.createBaseRequestSpecBuilder().setBasePath(GET_USER_PATH).build()).
         when()
                 .get().
         then()
@@ -34,7 +34,7 @@ public class getUsersTest {
     @Test
     public void getUsersPagingTest() {
         given()
-                .spec(RequestFactory.createBaseRequestSpecBuilder().setBasePath(getUsersPath).addQueryParam("page",2).build()).
+                .spec(RequestFactory.createBaseRequestSpecBuilder().setBasePath(GET_USER_PATH).addQueryParam("page",2).build()).
         when()
                 .get().
         then()

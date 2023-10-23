@@ -12,7 +12,8 @@ public class GooglePage {
 
 
     public  WebDriver driver;
-    public String textToSearch = "Please, consider hiring me.";
+    private static String INPUT_TEXT = "Please, consider hiring me.";
+    private static Long WAIT_TIME_IN_SECONDS = 5L;
 
     public GooglePage() {
         driver = new ChromeDriver();
@@ -32,15 +33,15 @@ public class GooglePage {
     }
 
     public  void clickDecline(){
-        waitingStrategy(5L,driver);
+        waitingStrategy(WAIT_TIME_IN_SECONDS,driver);
         WebElement declineButton = findElement("[id='W0wltc']");
         declineButton.click();
     }
 
     public  void fillSearchField(){
-        waitingStrategy(5L,driver);
+        waitingStrategy(WAIT_TIME_IN_SECONDS,driver);
         WebElement searchField = findElement("[id='APjFqb']");
-        searchField.sendKeys(textToSearch);
+        searchField.sendKeys(INPUT_TEXT);
     }
 
 }
